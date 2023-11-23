@@ -92,7 +92,6 @@ $ajaxUtils.sendGetRequest(
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
-  console.log("Check 1--> ",categories)
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
@@ -135,7 +134,6 @@ function buildAndShowHomeHTML (categories) {
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
-  console.log("Check 2--> in chooseRandomCategory")
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
 
