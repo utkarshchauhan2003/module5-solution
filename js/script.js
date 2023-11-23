@@ -103,6 +103,8 @@ function buildAndShowHomeHTML (categories) {
       // var chosenCategoryShortName = ....
 
       var chosenCategoryShortName = chooseRandomCategory(categories)
+      console.log("Chosen category is ??")
+      console.log(chosenCategoryShortName)
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -118,7 +120,7 @@ function buildAndShowHomeHTML (categories) {
       //
       // var homeHtmlToInsertIntoMainPage = ....
 
-      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,"randomCategoryShortName",chosenCategoryShortName)
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml,"randomCategoryShortName","'"+chosenCategoryShortName.short_name+"'");
 
 
       // TODO: STEP 4: Insert the produced HTML in STEP 3 into the main page
@@ -154,6 +156,7 @@ dc.loadMenuCategories = function () {
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
 dc.loadMenuItems = function (categoryShort) {
+  console.log("Here ?? loadMenuItems")
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     menuItemsUrl + categoryShort + ".json",
@@ -220,6 +223,7 @@ function buildCategoriesViewHtml(categories,
 // Builds HTML for the single category page based on the data
 // from the server
 function buildAndShowMenuItemsHTML (categoryMenuItems) {
+  console.log("In here --->buildAndShowMenuItemsHTML",categoryMenuItems)
   // Load title snippet of menu items page
   $ajaxUtils.sendGetRequest(
     menuItemsTitleHtml,
